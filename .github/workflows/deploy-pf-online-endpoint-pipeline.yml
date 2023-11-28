@@ -16,6 +16,9 @@ env:
   EVAL_RUN_NAME: classification_accuracy_eval_default_20230821_111809_077086
   ENDPOINT_NAME: web-classification
   DEPLOYMENT_NAME: blue
+  client-id: ${{ secrets.AZURE_CLIENT_ID }}
+  tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+  subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
 jobs:
   create-endpoint-and-deploy-pf:
@@ -29,7 +32,9 @@ jobs:
     - name: Azure login
       uses: azure/login@v1
       with:
-        creds: ${{secrets.AZURE_CREDENTIALS}}
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
     - name: List current directory
       run: ls
     - name: Set default subscription
