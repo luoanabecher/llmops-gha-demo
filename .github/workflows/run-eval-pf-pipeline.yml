@@ -11,6 +11,9 @@ env:
   SUBSCRIPTION: ${{secrets.SUBSCRIPTION}}
   RUN_NAME: web_classification_variant_1_20230816_215600_605116
   EVAL_RUN_NAME: classification_accuracy_eval_default_20230821_111809_077086
+  client-id: ${{ secrets.AZURE_CLIENT_ID }}
+  tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+  subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
 jobs:
   login-and-run-and-evalpf:
