@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches: [ main ]
+    
+permissions:
+  id-token: write
+  contents: read
 
 env: 
   GROUP: ${{secrets.GROUP}}
