@@ -28,7 +28,7 @@ nodes:
     temperature: 0.2
     text: ${fetch_text_content_from_url.output}
   provider: AzureOpenAI
-  connection: Default_AzureOpenAI
+  connection: aoai
   api: chat
   module: promptflow.tools.aoai
 - name: prepare_examples
